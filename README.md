@@ -25,14 +25,24 @@ The notebook:
 1. Loads and inspects the dataset, including its dimensions, column types, missing values, duplicate rows, and numeric summaries.
 2. Handles missing data by dropping the `car` column, which has the most missing values, and filling remaining missing values with each column's most frequent value. The cleaned data is stored in `NewData`.
 3. Visualizes overall coupon acceptance, coupon-type counts, and the temperature distribution.
-4. Examines bar coupons by comparing acceptance rates for different bar-visit frequencies and driver groups.
+4. Examines bar coupons by comparing acceptance rates for different bar-visit frequencies and driver groups, including groups defined by age, passengers, and marital status.
 5. Performs an independent exploration of carry-out coupons, comparing acceptance across selected driver groups.
+6. Uses Seaborn plots to explore coupon counts and customer characteristics, including income categories across occupations.
 
-Acceptance rates are calculated from the binary `Y` column: its mean is the fraction of observations with `Y = 1`. The notebook visualizes comparisons with bar charts.
+Acceptance rates are calculated from the binary `Y` column: its mean is the fraction of observations with `Y = 1`. The notebook visualizes comparisons with bar charts and subplots. Income is recorded in ranges, so charts of income by occupation should be interpreted as category comparisons rather than continuous income distributions.
 
 ## Exploratory observations
 
-The notebook's hypothesis is that drivers who visit bars more often may be more likely to accept bar coupons. Its carry-out exploration comments also report higher acceptance for some selected groups, including more frequent carry-out customers under age 30. These are exploratory patterns in the observed data, not evidence that the characteristics cause coupon acceptance.
+The notebook's recorded results show:
+
+- Overall bar-coupon acceptance was about **41.0%** (827 accepted out of 2,017 bar-coupon observations).
+- Among bar-coupon observations, acceptance was **37.1%** for drivers reporting three or fewer bar visits per month and **76.9%** for those reporting more than three visits.
+- Drivers who visited bars more than once a month and were over 25 had a **62.2%** acceptance rate, compared with **55.4%** for all others.
+- Drivers who visited bars more than once a month, were not traveling with a child, and were outside the farming, fishing, and forestry occupation group had a **62.3%** acceptance rate, compared with **54.6%** for all others.
+- Overall acceptance of carry-out coupons was about **73.5%** (1,760 accepted out of 2,393 observations). Within this coupon group, acceptance was **74.0%** for drivers who reported three or fewer carry-out visits per month and **69.6%** for those reporting more than three.
+- One carry-out comparison (more than one carry-out visit per month and over age 41 versus all others) showed similar rates: **56.6%** and **56.9%**, respectively.
+
+These are descriptive results from the notebook, not causal conclusions. The carry-out comparisons also show that frequency patterns differ by group definition; frequent visits do not consistently correspond to higher acceptance.
 
 ## Running the notebook
 
